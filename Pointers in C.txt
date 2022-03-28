@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+void update(int *a,int *b) 
+{
+    *a=*a+*b;//*a=4+5 so *a=9
+    *b=abs(*a -2 * *b);    //*b=abs(*a- 2*(*b))
+                           //*b=abs(9-2*(5))
+                           //*b=abs(9-10)
+                           //*b=abs(1) //abs is taken beacause it will gentate -ve value                            //and we dont want it
+}
+int main()
+ {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+    return 0;
+}
